@@ -7,9 +7,9 @@
       <div class="links">
         <a-button type="primary" @click="increment">increment</a-button>
         <a-button type="primary" @click="weather">weather</a-button>
-        <a-button type="primary" @click="language"
-          ><wd-icon type="icon-linyu" />{{ $t('lang') }}</a-button
-        >
+        <!--        <a-button type="primary" @click="language"-->
+        <!--          ><wd-icon type="icon-linyu" />{{ $t('lang') }}</a-button-->
+        <!--        >-->
       </div>
     </div>
   </div>
