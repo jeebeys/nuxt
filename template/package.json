@@ -1,0 +1,54 @@
+{
+  "name": "template-nuxt",
+  "version": "1.0.0",
+  "description": "My Nuxt.js Project",
+  "author": "jeebey",
+  "private": true,
+  "domain": "https://template.jeebey.com/",
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3000"
+    }
+  },
+  "scripts": {
+    "dev": "cross-env HOST=0.0.0.0 PORT=3000 PROXY=true nuxt",
+    "build": "nuxt build",
+    "start": "cross-env HOST=0.0.0.0 PORT=3002 PROXY=false nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@jeebey/vue-request": "git+ssh://git@gitee.com:plugins4node/vue-request.git#master",
+    "@jeebey/vue-vcached": "git+ssh://git@gitee.com:plugins4node/vue-vcached.git#master",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/style-resources": "^0.1.2",
+    "ant-design-vue": "^1.1.10",
+    "cookie-universal-nuxt": "^2.0.11",
+    "cross-env": "^5.2.0",
+    "node-emoji": "^1.10.0",
+    "nuxt": "^2.0.0",
+    "vue-events": "^3.1.0",
+    "vue-i18n": "^8.13.0",
+    "vue-native-websocket": "^2.0.13",
+    "vuex-cache": "^3.1.0",
+    "vuex-persistedstate": "^2.5.4",
+    "vuex-shared-mutations": "^1.0.2"
+  },
+  "devDependencies": {
+    "@jeebey/WebpackComplierVersionPlugin": "git+ssh://git@gitee.com:plugins4node/WebpackComplierVersionPlugin.git#master",
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0"
+  }
+}

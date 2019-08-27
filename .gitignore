@@ -1,0 +1,6 @@
+# Build and Release Folders
+template/node_modules
+template/.nuxt
+template/_nuxt
+template/.idea
+/template/.idea/vcs.xml
