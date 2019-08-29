@@ -8,6 +8,9 @@
         <a-button type="primary" @click="increment">increment</a-button>
         <a-button type="primary" @click="weather">weather</a-button>
       </div>
+      <div class="links">
+        <nuxt-link to="style" class="ant-btn ant-btn-primary">style</nuxt-link>
+      </div>
     </div>
   </div>
 </template>
