@@ -14,6 +14,9 @@
       <div class="links">
         <i class="iconfont iconshouye" style="font-size: 20px; " />
       </div>
+      <div class="links">
+        <v-icon type="iconshouye" />
+      </div>
     </div>
   </div>
 </template>

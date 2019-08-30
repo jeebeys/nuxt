@@ -14,14 +14,7 @@ import { Icon } from 'ant-design-vue/lib'
 
 // Vue.use(VueIconFont)
 const vIcon = Icon.createFromIconfontCN({
-  // scriptUrl: '//at.alicdn.com/t/font_1187486_t1qzfqftq4p.js'
-  // scriptUrl: '~/assets/iconfont/iconfont.js'
+  scriptUrl: '//at.alicdn.com/t/font_1187486_t1qzfqftq4p.js'
+  // scriptUrl: '../../assets/iconfont/iconfont.js'
 })
-
 Vue.component('v-icon', vIcon)
-
-// import Vue from 'vue'
-// import VueIconfont from 'vue-iconfont'
-// Vue.use(VueIconfont, {
-//   tag: 'v-icon'
-// })
