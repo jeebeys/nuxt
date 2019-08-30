@@ -1,5 +1,6 @@
 // 方法 1
 import '@/assets/iconfont/iconfont.css'
+// import '@/assets/iconfont/iconfont.js'
 import '@/assets/css/animate.css'
 // 方法 2
 // {
@@ -7,10 +8,20 @@ import '@/assets/css/animate.css'
 //   href: 'https://at.alicdn.com/t/font_976945_uz2xq0nsz8p.css'
 // }
 // 配置 nuxt.config.js head > link
-// 方法 3
+// 方法 3 antd
 import Vue from 'vue'
 import { Icon } from 'ant-design-vue/lib'
-const WdIcon = Icon.createFromIconfontCN({
-  scriptUrl: '//at.alicdn.com/t/font_976945_mfv6mjcbfho.js'
+
+// Vue.use(VueIconFont)
+const vIcon = Icon.createFromIconfontCN({
+  // scriptUrl: '//at.alicdn.com/t/font_1187486_t1qzfqftq4p.js'
+  // scriptUrl: '~/assets/iconfont/iconfont.js'
 })
-Vue.component('wd-icon', WdIcon)
+
+Vue.component('v-icon', vIcon)
+
+// import Vue from 'vue'
+// import VueIconfont from 'vue-iconfont'
+// Vue.use(VueIconfont, {
+//   tag: 'v-icon'
+// })

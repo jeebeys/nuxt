@@ -11,6 +11,9 @@
       <div class="links">
         <nuxt-link to="style" class="ant-btn ant-btn-primary">style</nuxt-link>
       </div>
+      <div class="links">
+        <i class="iconfont iconshouye" style="font-size: 20px; " />
+      </div>
     </div>
   </div>
 </template>
