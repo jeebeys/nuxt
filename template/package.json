@@ -37,7 +37,7 @@
     "vuex-shared-mutations": "^1.0.2"
   },
   "devDependencies": {
-    "@jeebey/WebpackComplierVersionPlugin": "git+ssh://git@gitee.com:plugins4node/WebpackComplierVersionPlugin.git#master",
+    "@jeebey/vue-version": "git+ssh://git@gitee.com:plugins4node/vue-version.git#master",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",

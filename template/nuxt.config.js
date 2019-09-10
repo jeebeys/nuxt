@@ -1,4 +1,4 @@
-import WebpackComplierVersionPlugin from '@jeebey/WebpackComplierVersionPlugin'
+import WebpackComplierVersionPlugin from '@jeebey/vue-version'
 import pkg from './package'
 export default {
   mode: 'universal',

@@ -55,7 +55,7 @@ export default {
   },
   beforeDestroy() {
     console.log('beforeDestroy')
-    this.$store.unregisterModule('m2')
+    // this.$store.unregisterModule(['m2'])
   },
   methods: {
     increment() {
