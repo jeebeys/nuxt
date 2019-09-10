@@ -12,9 +12,7 @@
         <nuxt-link to="style" class="ant-btn ant-btn-primary">style </nuxt-link>
       </div>
       <div class="links">
-        <a-button type="primary" @click="language"
-          >lang-{{ $t('lang') }}</a-button
-        >
+        <a-button type="primary" @click="language">lang</a-button>
       </div>
       <div class="links">
         <i class="iconfont iconshouye" style="font-size: 20px; " /> {{ a }}
