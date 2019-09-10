@@ -1,4 +1,17 @@
-export const plugins = []
+export const plugins = [
+  (store) => {
+    store.subscribe((mutation, state) => {})
+  }
+]
+
+export const modules = {
+  m1: {
+    namespaced: true,
+    state: {
+      a: 'abc123'
+    }
+  }
+}
 
 export const state = () => ({
   session: {},

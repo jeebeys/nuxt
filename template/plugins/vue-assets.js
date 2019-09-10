@@ -17,4 +17,5 @@ const vIcon = Icon.createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_1187486_t1qzfqftq4p.js'
   // scriptUrl: '../../assets/iconfont/iconfont.js'
 })
+
 Vue.component('v-icon', vIcon)

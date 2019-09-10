@@ -9,22 +9,29 @@
         <a-button type="primary" @click="weather">weather</a-button>
       </div>
       <div class="links">
-        <nuxt-link to="style" class="ant-btn ant-btn-primary">style</nuxt-link>
+        <nuxt-link to="style" class="ant-btn ant-btn-primary">style </nuxt-link>
       </div>
       <div class="links">
-        <i class="iconfont iconshouye" style="font-size: 20px; " />
+        <a-button type="primary" @click="language"
+          >lang-{{ $t('lang') }}</a-button
+        >
       </div>
       <div class="links">
-        <v-icon type="iconshouye" />
+        <i class="iconfont iconshouye" style="font-size: 20px; " /> {{ a }}
+      </div>
+      <div class="links">
+        <v-icon type="iconshouye" /> {{ $store.state.m2 }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Logo from '~/components/Logo.vue'
 import version from '@/assets/version.json'
 import secured from '@/enhance/mix-secured'
+
 export default {
   middleware: 'front',
   components: {
@@ -36,18 +43,37 @@ export default {
       build: ' build ' + version.build
     }
   },
+  computed: {
+    ...mapState('m1', {
+      a: (state) => state.a
+    })
+  },
   mounted() {
+    console.log('vuex1', this.$store)
     console.log('cache:', this.$cache)
     console.log('event:', this.$events)
     console.log('http:', this.$http)
     console.log('sockets:', this.$options.sockets)
   },
+  beforeDestroy() {
+    console.log('beforeDestroy')
+    this.$store.unregisterModule('m2')
+  },
   methods: {
     increment() {
+      this.$store.registerModule('m2', {
+        namespaced: true,
+        state: {
+          a: '666'
+        },
+        mutations: {},
+        actions: {},
+        getters: {}
+      })
       this.$store.dispatch('inc')
     },
     language() {
-      // this.$store.state.locale = 'cn'
+      this.$store.state.locale = 'cn'
       this.$cookies.set('_lang', 'cn')
       this.$i18n.locale = 'cn'
     },
