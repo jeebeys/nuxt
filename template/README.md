@@ -1,2 +1,1 @@
 # weedo-vue
-{{ $t('lang') }}
