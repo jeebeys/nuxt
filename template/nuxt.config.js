@@ -1,4 +1,6 @@
+import Webpack from 'webpack'
 import WebpackComplierVersionPlugin from '@jeebey/vue-version'
+import WebpackCompressionPlugin from 'compression-webpack-plugin'
 import pkg from './package'
 export default {
   mode: 'universal',
@@ -70,10 +72,31 @@ export default {
    ** Build configuration
    */
   build: {
+    vendor: [
+      'axios',
+      '~enhance/mix-secured.js',
+      '~enhance/vue-execute.js',
+      '~enhance/vue-extends.js',
+      '~enhance/vue-throttle.js'
+    ],
+    devtools: true,
     plugins: [
+      new Webpack.DefinePlugin({
+        'process.VERSION': 20190612
+      }),
+      new Webpack.BannerPlugin({
+        banner: 'jeebey.com AT ' + new Date().toString()
+      }),
       new WebpackComplierVersionPlugin({
         path: './assets/version.json',
         format: 'YYYYMMDDHHmm'
+      }),
+      new WebpackCompressionPlugin({
+        filename: '[path].gz[query]',
+        algorithm: 'gzip',
+        test: /\.(js|html)$/,
+        threshold: 10240,
+        minRatio: 0.8
       })
     ],
     /*

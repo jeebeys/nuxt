@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">template-nuxt</h1>
+      <h1 class="title">template-nuxt {{ version }}</h1>
       <h3 class="title">{{ $store.state.count }}</h3>
       <div class="links">
         <a-button type="primary" @click="increment">increment</a-button>
@@ -45,6 +45,9 @@ export default {
     ...mapState('m1', {
       a: (state) => state.a
     })
+  },
+  asyncData() {
+    return { version: process.VERSION }
   },
   mounted() {
     console.log('vuex1', this.$store)
