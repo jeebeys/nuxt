@@ -2,8 +2,9 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">template-nuxt {{ version }}</h1>
+      <h1 class="title">template-nuxt-20 {{ version }}</h1>
       <h3 class="title">{{ $store.state.count }}</h3>
+      <h5 class="title" style="font-size: 28px">node: {{ vnode }}</h5>
       <div class="links">
         <a-button type="primary" @click="increment">increment</a-button>
         <a-button type="primary" @click="weather">weather</a-button>
@@ -47,7 +48,7 @@ export default {
     })
   },
   asyncData() {
-    return { version: process.VERSION }
+    return { version: process.VERSION, vnode: process.version }
   },
   mounted() {
     console.log('vuex1', this.$store)
