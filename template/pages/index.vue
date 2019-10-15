@@ -80,9 +80,12 @@ export default {
       this.$i18n.locale = 'cn'
     },
     weather() {
-      this.$http.get('/api/weather/city/101030100', {}).then((data) => {
-        console.log(data)
-      })
+      this.$http
+        .cache(true, 30000)
+        .get('/api/weather/city/101030100', {})
+        .then((data) => {
+          console.log(data)
+        })
     }
   }
 }

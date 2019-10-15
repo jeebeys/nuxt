@@ -1,7 +1,9 @@
 import Webpack from 'webpack'
 import WebpackComplierVersionPlugin from '@jeebey/vue-version'
 import WebpackCompressionPlugin from 'compression-webpack-plugin'
+import GitRevisionPlugin from 'git-revision-webpack-plugin'
 import pkg from './package'
+const _gitRevisionPlugin = new GitRevisionPlugin()
 export default {
   mode: 'universal',
   /*
@@ -82,14 +84,19 @@ export default {
     devtools: true,
     plugins: [
       new Webpack.DefinePlugin({
-        'process.VERSION': 20190612
+        'process.VERSION': 20190612,
+        'process.git_version': JSON.stringify(_gitRevisionPlugin.version()),
+        'process.git_commit': JSON.stringify(_gitRevisionPlugin.commithash()),
+        'process.git_branch': JSON.stringify(_gitRevisionPlugin.branch())
       }),
       new Webpack.BannerPlugin({
         banner: 'jeebey.com AT ' + new Date().toString()
       }),
       new WebpackComplierVersionPlugin({
         path: './assets/version.json',
-        format: 'YYYYMMDDHHmm'
+        format: 'YYYYMMDDHHmm',
+        gitver: _gitRevisionPlugin.version(),
+        branch: _gitRevisionPlugin.branch()
       }),
       new WebpackCompressionPlugin({
         filename: '[path].gz[query]',
