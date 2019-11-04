@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">template-nuxt-20 {{ version }}</h1>
+      <h1 class="title">template-nuxt-20 {{ version }} - {{ date }}</h1>
       <h3 class="title">{{ $store.state.count }}</h3>
       <h5 class="title" style="font-size: 28px">node: {{ vnode }}</h5>
       <div class="links">
@@ -32,6 +32,7 @@ import version from '@/assets/version.json'
 import secured from '@/enhance/mix-secured'
 
 export default {
+  name: 'Index',
   middleware: 'front',
   components: {
     Logo
@@ -39,6 +40,7 @@ export default {
   mixins: [secured],
   data() {
     return {
+      date: Date.now(),
       build: ' build ' + version.build
     }
   },

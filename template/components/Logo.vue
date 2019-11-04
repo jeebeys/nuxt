@@ -4,9 +4,28 @@
     <div class="Triangle Triangle--one" />
     <div class="Triangle Triangle--three" />
     <div class="Triangle Triangle--four" />
+    <div>{{ datetime }}</div>
   </div>
 </template>
-
+<script>
+export default {
+  name: 'Logo',
+  middleware: 'front',
+  serverCacheKey: () => {
+    const key = parseInt(Date.now() / 10000)
+    console.log('logo=cache=>', key)
+    return key
+  },
+  data() {
+    return {
+      datetime: Date.now()
+    }
+  },
+  created() {
+    console.log('logo=created=>')
+  }
+}
+</script>
 <style>
 .VueToNuxtLogo {
   display: inline-block;

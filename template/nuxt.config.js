@@ -2,6 +2,8 @@ import Webpack from 'webpack'
 import WebpackComplierVersionPlugin from '@jeebey/vue-version'
 import WebpackCompressionPlugin from 'compression-webpack-plugin'
 import GitRevisionPlugin from 'git-revision-webpack-plugin'
+import Lrucache from 'lru-cache'
+import PageCache from 'nuxt-page-cache'
 import pkg from './package'
 const _gitRevisionPlugin = new GitRevisionPlugin()
 export default {
@@ -28,6 +30,28 @@ export default {
   loading: { color: '#fff' },
   router: {
     middleware: ['_i18n']
+  },
+  serverMiddleware: [
+    PageCache.cacheSeconds(1, (req) => {
+      // if (req.url.endsWith('cache=true')) {
+      //   console.log('page=cache=>', req)
+      //   console.log('page=cache=>', req.query, req.query && req.query.cache)
+      // }
+      // console.log('page=cache=>', req.url)
+      // return true
+      if (req.query && req.query.pageType) {
+        return req.query.pageType
+      }
+      return false
+    })
+  ],
+  render: {
+    bundleRenderer: {
+      cache: new Lrucache({
+        max: 10000,
+        maxAge: 1000 * 60 * 15
+      })
+    }
   },
   /*
    ** Global CSS
