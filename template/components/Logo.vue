@@ -13,7 +13,7 @@ export default {
   middleware: 'front',
   serverCacheKey: () => {
     const key = parseInt(Date.now() / 10000)
-    console.log('logo=cache=>', key)
+    console.log('logo=cache=>111', key)
     return key
   },
   data() {
