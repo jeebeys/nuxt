@@ -1,13 +1,19 @@
 <template>
   <div class="warp">
-    less
+    less- {{ data.t1 }}
     <div class="text">text</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Less'
+  name: 'Less',
+  props: {
+    data: {
+      type: Object,
+      default() {}
+    }
+  }
 }
 </script>
 

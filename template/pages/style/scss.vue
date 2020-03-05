@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="warp">
-      scss
+      scss - {{ data.t1 }}
       <div class="text">text</div>
     </div>
   </div>
@@ -9,7 +9,13 @@
 
 <script>
 export default {
-  name: 'Scss'
+  name: 'Scss',
+  props: {
+    data: {
+      type: Object,
+      default() {}
+    }
+  }
 }
 </script>
 
