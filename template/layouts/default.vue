@@ -12,11 +12,11 @@ export default {
   },
   watch: {
     message() {
-      console.log('msg: ' + this.$store.state.message.message)
+      console.log('msg: ', this.$store.state.message)
     }
   },
   mounted() {
-    this.$connect('wss://weedo.jeebey.com/ws/client')
+    this.$connect('wss://alarm.jeebey.com/ws/channel/browser')
   }
 }
 </script>

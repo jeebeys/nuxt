@@ -16,7 +16,8 @@
         <a-button type="primary" @click="language">lang</a-button>
       </div>
       <div class="links">
-        <i class="iconfont iconshouye" style="font-size: 20px; " /> {{ a }}
+        <i class="iconfont iconshouye" style="font-size: 20px; " /> {{ a }} -
+        {{ b }}
       </div>
       <div class="links">
         <v-icon type="iconshouye" /> {{ $store.state.m2 }}
@@ -46,6 +47,9 @@ export default {
   },
   computed: {
     ...mapState('m1', {
+      b: (state) => state.a
+    }),
+    ...mapState({
       a: (state) => state.a
     })
   },

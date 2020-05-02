@@ -16,15 +16,20 @@
 <script>
 export default {
   name: 'Style',
-  provide: {
-    foo: 'bar-1'
+  provide() {
+    console.log('life-2')
+    return {
+      foo: this.dat
+    }
   },
   data() {
+    console.log('life-1')
     return {
       dat: { t1: '123' }
     }
   },
   mounted() {
+    console.log('life-3')
     console.log('init', this.dat)
   },
   methods: {

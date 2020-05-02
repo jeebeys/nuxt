@@ -1,6 +1,8 @@
 export const plugins = [
   (store) => {
-    store.subscribe((mutation, state) => {})
+    store.subscribe((mutation, state) => {
+      console.log('plugins-', state)
+    })
   }
 ]
 
@@ -8,7 +10,7 @@ export const modules = {
   m1: {
     namespaced: true,
     state: {
-      a: 'abc123'
+      b: 'abc12311'
     }
   }
 }
@@ -18,7 +20,8 @@ export const state = () => ({
   message: '',
   socket: '',
   locale: 'cn',
-  count: 0
+  count: 0,
+  a: 'bc-111'
 })
 
 export const mutations = {

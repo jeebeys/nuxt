@@ -19,9 +19,11 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@jeebey/vue-request": "git+ssh://git@gitee.com:plugins4node/vue-request.git#master",
-    "@jeebey/vue-vcached": "git+ssh://git@gitee.com:plugins4node/vue-vcached.git#master",
-    "@jeebey/vue-version": "git+ssh://git@gitee.com:plugins4node/vue-version.git#master",
+    "@jeebey/vue-execute": "^1.0.1",
+    "@jeebey/vue-extends": "^1.0.11",
+    "@jeebey/vue-request": "^1.0.3",
+    "@jeebey/vue-vcached": "^1.0.1",
+    "@jeebey/vue-version": "^1.1.0",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/style-resources": "^0.1.2",
